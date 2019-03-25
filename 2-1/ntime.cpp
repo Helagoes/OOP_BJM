@@ -47,7 +47,9 @@ void ntime::normalize()
 				this->_seconds = 0;
 			}
 		}
-ntime::ntime(int hours=0,int minutes=0,int seconds=0):
+ntime::ntime():_hours(0), _minutes(0), _seconds(0)
+{}
+ntime::ntime(int hours=0, int minutes=0, int seconds=0 ):
 		_hours(hours), _minutes(minutes), _seconds(seconds)
 	{
 	normalize();
@@ -57,22 +59,6 @@ ntime::ntime(const ntime &ref_ntime){
 		_hours = ref_ntime._hours;
 		_minutes = ref_ntime._minutes;
 		_seconds = ref_ntime._seconds;
-	}
-int ntime::get_hours() const
-	{
-		return this->_hours;
-	}
-int ntime::get_minutes() const
-	{
-		return this->_minutes;
-	}
-int ntime::get_seconds() const
-	{
-		return this->_seconds;
-	}
-int ntime::justseconds() const
-	{
-		return (this->_hours*3600+this->_minutes*60+this->_seconds);
 	}
 void ntime::add(const ntime ref)
 {

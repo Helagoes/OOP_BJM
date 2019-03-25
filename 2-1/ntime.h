@@ -26,13 +26,26 @@ private:
 	void normalize();
 
 public:
+	ntime();
 	ntime(int ,int ,int);
 	~ntime();
 	ntime(const ntime&);
-	int get_hours() const;
-	int get_minutes() const;
-	int get_seconds() const;
-	int justseconds() const;
+	int get_hours() const
+		{
+			return this->_hours;
+		}
+	int get_minutes() const
+		{
+			return this->_minutes;
+		}
+	int get_seconds() const
+		{
+			return this->_seconds;
+		}
+	int justseconds() const
+		{
+			return (this->_hours*3600+this->_minutes*60+this->_seconds);
+		}
 	void add(const ntime);
 	ntime& operator+(ntime const&);
 	ntime& operator-(ntime const&);

@@ -6,7 +6,7 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	ntime test(-2,180,-8);
+	ntime test;
 	cout << "Die Zeit betraegt: " << test << endl
 		 << "Zeit in Sekunden: " << test.justseconds() << endl;
 
